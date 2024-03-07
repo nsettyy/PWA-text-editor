@@ -7,12 +7,16 @@ module.exports = () => {
   return {
     mode: "development",
     entry: {
-      main: "./src/js/index.js",
+      main: "./src/js/index.js", 
       install: "./src/js/install.js",
+      database: "./src/js/database.js",
+      editor: "./src/js/editor.js",
+      header: "./src/js/header.js", 
     },
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
+      clean: true,
     },
 
     // TODO: Add and configure workbox plugins for a service worker and manifest file.
@@ -30,7 +34,7 @@ module.exports = () => {
         inject: true,
         name: "Just Another Text Editor",
         short_name: "JATE",
-        description: "Text Editor with offline capabilities using IndexedDB",
+        description: "Text Editor",
         background_color: "#225ca3",
         theme_color: "#225ca3",
         start_url: "/",
